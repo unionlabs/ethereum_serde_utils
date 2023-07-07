@@ -5,8 +5,7 @@
 //! Quotes can be optional during decoding.
 
 use ethereum_types::U256;
-use serde::{Deserializer, Serializer};
-use serde_derive::{Deserialize, Serialize};
+use serde::{Deserialize, Deserializer, Serialize, Serializer};
 use std::convert::TryFrom;
 use std::marker::PhantomData;
 
@@ -201,6 +200,7 @@ pub mod quoted_u256 {
 #[cfg(test)]
 mod test {
     use super::*;
+    use serde::{Deserialize, Serialize};
 
     #[derive(Debug, PartialEq, Serialize, Deserialize)]
     #[serde(transparent)]
